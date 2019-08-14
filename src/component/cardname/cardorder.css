@@ -1,0 +1,32 @@
+.cardOrder, .groupOrder{
+    display: flex;
+    left: 5%;
+    position: relative;
+}
+
+.cardOrder{
+    margin-top: 10px;
+    /* margin: auto; */
+    width: 90%;
+}
+
+.ordbtn{
+    text-align: center;
+    width: 45%;
+    /* padding: 12px; */
+    margin: 2px;
+    padding: 10px 0 10px 0;
+    border-radius: 10px;
+    background: white;
+}
+
+.ordbtn:first-child{
+    background:#3742fa;
+    font-weight: 500;
+    color: white;
+}
+
+.ordbtn:nth-child(2){
+    font-weight: 500;
+    color:#3742fa;
+}

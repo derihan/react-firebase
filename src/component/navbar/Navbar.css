@@ -1,0 +1,17 @@
+.navbar{
+    background: white;
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    /* width: 500px; */
+    /* flex-wrap: wrap */
+    justify-content: center;
+    position: static;
+}
+
+.navbar div {
+    list-style: none;
+    /* padding-top: 12px; */
+    padding: 0 20px 0 20px;
+}
+

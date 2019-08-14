@@ -1,0 +1,31 @@
+.card{
+    margin-top: 30px;
+    width: 90%;
+    left: 5%;
+    padding: 22px;
+    position: relative;
+    background: white;
+    border-left: 6px solid #3742fa;
+    box-shadow: 0px 1px 4px -3px rgba(0,0,0,0.69);
+}
+
+.card p, .card h2{
+    margin-bottom: 0px;
+}
+
+.card p{
+    color: #000;
+}
+
+.accBalance{
+    display: flex;
+}
+
+.accBalance h2{
+    font-weight: 600;
+}
+
+.accBalance p{
+    margin-right: 10px;
+    font-weight: 600;
+}
