@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './Navbar.css'
+import Signedin from './signedin';
 
 
 const Navbar = () => {
@@ -10,7 +11,7 @@ const Navbar = () => {
                 <div><Link  to="/">Home</Link></div>
                 <div><Link to="/product">Product</Link></div>
                 <div><Link to="/profil">Profil</Link></div>
-                <div><Link to="/login">login</Link></div>
+                <Signedin/>
                 <div className="cart"><i className="fa fa-shopping-cart"></i></div>
             
         </nav>
