@@ -8,76 +8,42 @@ import ProductCount from '../component/product/ProductCount';
 export class Product extends Component {
 
     state = {
-        iskategori : "0"
+        iskategori : null,
+        pLength: this.props.allProduct.length
     }
 
-    getKat = () => {
-        const product = this.props.allProduct
-        const condition = this.state.iskategori
-        if (condition == "0") {
-           return (
-            product.map((item)=>{
-                return(
-                    <ProductCard data={item} key={item.id}/>
-                )
-            })
-           )
-          
-        } else {
-            // console.log(condition);
-             return (
-                product.filter((data)=> data.kategori == condition)
-                    .map((item)=>{
-                        return(
-                            <ProductCard data={item} key={item.id} />
-                        )
-                    })
-             )
-        }
+    detailPage = (id) =>{
+        this.props.history.push(`/productdetail/${id}`)
     }
 
     handleKat = (id) =>{
-        console.log(id);
-        this.setState({  iskategori:id })
+        var datacount
+        id === null ? datacount =this.props.allProduct : datacount = this.props.allProduct.filter((item)=> item.kategori === id ) 
+        // const datacount = 
+        this.setState({  
+            iskategori:id,
+            pLength: datacount.length
+        })
     }
 
     render() {
-        // var katid = this.state.iskategori
-        // // const katCount ;
-        // if (katid != "0") {
-        //    const katCount = <ProductCount count={this.props.allProduct.length}/>
-        // }
-
         return (
             <div>
-                <div className="navcat-wrapper"> 
-                <Navcat cat="all" changeKat={this.handleKat} id="0" key={0} />
-                {
-                     this.props.kategori.map((item)=>{
-                         return(
-                            <Navcat cat={item.nama} id={item.id} changeKat={this.handleKat} key={item.id} />        
-                         )
-                     })
-                 }   
-                </div>
+                <Navcat handleCat={this.handleKat} data={this.props.kategori} />
                 <br/>
-                <ProductCount count={this.props.allProduct.length}/>
-                {
-                    this.getKat()
-                }
-                </div>
+                <ProductCount pcount={this.state.pLength} />
+                <ProductCard data={this.props.allProduct} detail={(e)=>this.detailPage(e)} isKategori={this.state.iskategori}/>
+            </div>
         )
     }
 }
 
 const matStateToProps = (state) => {
     return{
-        // productLength : state.product.length,
         allProduct : state.product,
         kategori : state.kategori,
-        // detail : state.productDetail
     }
 }
 
 export default connect(matStateToProps)(Product);
-// export default Product;;
+

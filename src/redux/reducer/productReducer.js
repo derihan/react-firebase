@@ -1,11 +1,11 @@
 //global state
 const initState = {
     product:[
-      { id:1, nama:'laptop 1', kategori:'1', harga:1240000 },
-      { id:2, nama:'laptop 2', kategori:'1', harga:4240000 },
-      { id:3, nama:'hp 1', kategori:'2', harga:240000 },
-      { id:4, nama:'hp 2', kategori:'2', harga:440000 },
-      { id:5, nama:'key 2', kategori:'3', harga:500000 }
+      { id:1, nama:'laptop 1', kategori:1, harga:1240000 },
+      { id:2, nama:'laptop 2', kategori:1, harga:4240000 },
+      { id:3, nama:'hp 1', kategori:2, harga:240000 },
+      { id:4, nama:'hp 2', kategori:2, harga:440000 },
+      { id:5, nama:'key 2', kategori:3, harga:500000 }
     ],
     kategori: [
       { id:1, nama:'laptop' },
